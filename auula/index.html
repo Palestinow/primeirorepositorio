@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora da  auula</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <input type="text" placeholder="digite o primeiro numero" id="n1">
+     <input type="text" placeholder="digite o segundo numero" id="n2"> 
+       
+        <button onclick="calcular('+')" class="op">+</button>
+        <button onclick="calcular('-')" class="op">-</button> 
+        <button onclick="calcular('*')" class="op">*</button> 
+        <button onclick="calcular('/')" class="op">/</button> 
+
+        <button onclick="limpar()">C</button>
+     <input type="text" id=resultado placeholder="resultado" disabled>
+</body>
+<script src="script.js"></script>
+</html>
