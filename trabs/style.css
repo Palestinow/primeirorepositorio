@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.esquerda, .meio, .direita {
+    flex: 1; 
+    padding: 20px;
+}
+
+.esquerda {
+    background-color: #f0f0f0; 
+}
+
+.meio {
+    background-color: #e0e0e0; 
+}
+
+.direita {
+    background-color: #d0d0d0; 
+}
