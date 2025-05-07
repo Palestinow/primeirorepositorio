@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS bancoapp;
+USE bancoapp;
+
+CREATE TABLE IF NOT EXISTS cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS conta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    saldo DOUBLE NOT NULL,
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id)
+);
