@@ -1,0 +1,14 @@
+C:\Users\THIAGOCOSTAPALESTINO\aula1\bin\Debug\net8.0\aula1.exe
+C:\Users\THIAGOCOSTAPALESTINO\aula1\bin\Debug\net8.0\aula1.deps.json
+C:\Users\THIAGOCOSTAPALESTINO\aula1\bin\Debug\net8.0\aula1.runtimeconfig.json
+C:\Users\THIAGOCOSTAPALESTINO\aula1\bin\Debug\net8.0\aula1.dll
+C:\Users\THIAGOCOSTAPALESTINO\aula1\bin\Debug\net8.0\aula1.pdb
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.AssemblyInfoInputs.cache
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.AssemblyInfo.cs
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.csproj.CoreCompileInputs.cache
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.dll
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\refint\aula1.dll
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.pdb
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\aula1.genruntimeconfig.cache
+C:\Users\THIAGOCOSTAPALESTINO\aula1\obj\Debug\net8.0\ref\aula1.dll
