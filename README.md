@@ -161,34 +161,257 @@ Em benchmarks, Debian se destaca em estabilidade de longo prazo, enquanto Ubuntu
 
 ---
 
-10) Segurança
+fun main() {
 
-Debian: pacotes testados e liberados apenas após muita revisão, o que reduz falhas.
+    while (true) {
+        println("\n==============================")
+        println("LISTA DE EXERCÍCIOS - KOTLIN")
+        println("==============================")
+        println("1 - Exercício 1")
+        println("2 - Exercício 2")
+        println("3 - Exercício 3")
+        println("4 - Exercício 4")
+        println("5 - Exercício 5")
+        println("0 - Sair")
+        print("Escolha uma opção: ")
 
-Ubuntu: atualizações constantes, além do recurso Livepatch que permite atualizar o kernel sem reiniciar.
+        when (readln().toIntOrNull()) {
+            1 -> exercicio1()
+            2 -> exercicio2()
+            3 -> exercicio3()
+            4 -> exercicio4()
+            5 -> exercicio5()
+            0 -> {
+                println("Programa encerrado.")
+                return
+            }
+            else -> println("Opção inválida!")
+        }
+    }
+}
 
-openSUSE: sistema de patches via Zypper, rápido e confiável.
+//==============================================
+// EXERCÍCIO 1
+//==============================================
 
+fun exercicio1() {
 
+    print("Digite um caractere: ")
+    val entrada = readln()
 
----
+    if (entrada.length != 1) {
+        println("Caractere inválido!")
+        return
+    }
 
-11) Ferramentas e Aplicativos
+    val c = entrada[0]
 
-Debian: APT, Synaptic, Firefox, LibreOffice.
+    when {
+        c.isDigit() -> println("É um número.")
+        c.lowercaseChar() in listOf('a', 'e', 'i', 'o', 'u') ->
+            println("É uma vogal.")
+        c.isLetter() ->
+            println("É uma consoante.")
+        else ->
+            println("Caractere inválido.")
+    }
+}
 
-Ubuntu: Snap Store, Steam, pacotes Snap e Flatpak, além de LibreOffice.
+//==============================================
+// EXERCÍCIO 2
+//==============================================
 
-openSUSE: YaST (uma das ferramentas de configuração mais completas), KDE Plasma, LibreOffice.
+fun exercicio2() {
 
+    val notas = mutableListOf<Int>()
 
+    println("Digite as notas (0 a 100).")
+    println("Digite -1 para finalizar.")
 
----
+    while (true) {
 
-12) Experiência do Usuário
+        print("Nota: ")
+        val nota = readln().toIntOrNull()
 
-Debian: recomendado para quem prioriza estabilidade; instalação menos intuitiva.
+        if (nota == null) {
+            println("Valor inválido.")
+            continue
+        }
 
-Ubuntu: indicado para iniciantes; fácil instalação e configuração.
+        if (nota == -1)
+            break
 
-openSUSE: robusto, muito elogiado por profissionais, mas pode ser complexo para novos usuários.
+        if (nota !in 0..100) {
+            println("Nota inválida.")
+            continue
+        }
+
+        notas.add(nota)
+    }
+
+    if (notas.isEmpty()) {
+        println("Nenhuma nota informada.")
+        return
+    }
+
+    println("\nClassificação:")
+
+    for (nota in notas) {
+
+        val classificacao = when (nota) {
+            in 90..100 -> "Excelente"
+            in 70..89 -> "Aprovado"
+            in 50..69 -> "Recuperação"
+            else -> "Reprovado"
+        }
+
+        println("$nota -> $classificacao")
+    }
+
+    println("\nQuantidade: ${notas.size}")
+    println("Maior nota: ${notas.max()}")
+    println("Menor nota: ${notas.min()}")
+    println("Média: %.2f".format(notas.average()))
+}
+
+//==============================================
+// EXERCÍCIO 3
+//==============================================
+
+fun exercicio3() {
+
+    val nomes = listOf("Ana", null, "Carlos", "Maria", null, "João")
+
+    var validos = 0
+
+    println()
+
+    for (nome in nomes) {
+
+        if (nome == null) {
+            println("Nome não informado")
+        } else {
+
+            println(nome)
+            validos++
+
+            if (nome == "Maria") {
+                println("\nMaria encontrada. Busca encerrada.")
+                break
+            }
+        }
+    }
+
+    println("Quantidade de nomes válidos encontrados: $validos")
+}
+
+//==============================================
+// EXERCÍCIO 4
+//==============================================
+
+fun exercicio4() {
+
+    val loginCorreto = "admin"
+    val senhaCorreta = "1234"
+
+    var tentativas = 0
+
+    while (tentativas < 3) {
+
+        println("\nTentativa ${tentativas + 1} de 3")
+
+        print("Login: ")
+        val login = readln()
+
+        print("Senha: ")
+        val senha = readln()
+
+        if (login == loginCorreto && senha == senhaCorreta) {
+            println("Login realizado com sucesso!")
+            return
+        }
+
+        if (login != loginCorreto) {
+            println("Login inválido.")
+        } else {
+            println("Senha inválida.")
+        }
+
+        tentativas++
+    }
+
+    println("\nConta bloqueada após 3 tentativas.")
+}
+
+//==============================================
+// EXERCÍCIO 5
+//==============================================
+
+fun exercicio5() {
+
+    val alunos = listOf(
+        "Ana",
+        null,
+        "Carlos",
+        "Maria",
+        null,
+        "João"
+    )
+
+    val notas = listOf(
+        95,
+        82,
+        48,
+        67,
+        100,
+        73
+    )
+
+    var excelente = 0
+    var aprovado = 0
+    var recuperacao = 0
+    var reprovado = 0
+
+    println()
+
+    for (i in alunos.indices) {
+
+        val nome = alunos[i] ?: "Aluno não identificado"
+        val nota = notas[i]
+
+        val classificacao = when (nota) {
+
+            in 90..100 -> {
+                excelente++
+                "Excelente"
+            }
+
+            in 70..89 -> {
+                aprovado++
+                "Aprovado"
+            }
+
+            in 50..69 -> {
+                recuperacao++
+                "Recuperação"
+            }
+
+            else -> {
+                reprovado++
+                "Reprovado"
+            }
+        }
+
+        println("$nome - Nota: $nota - $classificacao")
+    }
+
+    println("\n========== RELATÓRIO ==========")
+    println("Total de alunos: ${alunos.size}")
+    println("Excelente: $excelente")
+    println("Aprovado: $aprovado")
+    println("Recuperação: $recuperacao")
+    println("Reprovado: $reprovado")
+    println("Maior nota: ${notas.max()}")
+    println("Menor nota: ${notas.min()}")
+    println("Média da turma: %.2f".format(notas.average()))
+}
